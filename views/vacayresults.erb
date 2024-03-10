@@ -1,0 +1,33 @@
+<div>
+<h1>On your chosen date of <%= @date.strftime('%a %b %d %Y') %>, you should visit...</h1>
+<img src=<%= @flag %> alt=<%= @flag_alt %> >
+</div>
+<div>
+<h1><%= @country_official_name %></h1>
+
+<%if @country_official_name != @country_common_name %>
+<h3>Also known as: <%= @country_common_name %></h3>
+<% end %>
+
+<h4>Where is <%= @country_common_name %>?</h4>
+<p><%= @country_location %></p>
+
+<h4>Here's the weather forecast for the day you're visiting <%= @country_common_name %>:</h4>
+<div>
+<span><strong>Low:</strong> <%= @temp_min.round %>°F</span>
+<span><strong>High:</strong> <%= @temp_max.round %>°F</span>
+<% if @precipitation.to_f > 0 %>
+<span><strong>Precipitation: </strong><%= @precipitation.to_f %> in</span>
+<% end %>
+</div>
+
+
+<h4>A Brief History of <%= @country_common_name %> from the CIA Factbook:</h4>
+<p><%= @country_background %></p>
+
+<h3>Currency Name and Symbol: <%= @currency[0].values[0] %>, <%= @currency[0].values[1] %></h3>
+<p><%= @country_currency_code %></p>
+<p>Conversion: 1 USD equals <%= @quote %> <%= @currency[0].values[0] %>.</p>
+</div>
+
+<a href="/">Go Back</a>

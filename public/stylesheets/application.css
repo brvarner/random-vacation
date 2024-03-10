@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'muli';
+  src: url('../muli/muli-webfont.woff') format('woff');
+}
+
+@font-face{
+  font-family: "muli semibold";
+  src: url('../muli/muli-semibold-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: "muli semibold italic";
+  src: url('../muli/muli-semi-bolditalic-webfont.woff') format('woff');
+}
+
+@font-face{
+  font-family: "muli extralight";
+  src: url('../muli/muli-extralight-webfont.woff') format('woff');
+}
+
+body {
+  background-color: #232946;
+  font-family: "muli", sans-serif
+}
+
+h1 {
+  font-family: "muli semibold", sans-serif;
+}
+
+h3{
+  font-family: "muli extralight", sans-serif;
+}
+
+h4 {
+  font-family: "muli semibold italic", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fffffe;
+}
+
+form label {
+  color: #b8c1ec
+}
+
+p, span, strong {
+  color: #b8c1ec
+}
+
+a {
+  text-decoration: none;
+  background-color: #eebbc3;
+  color: #232946;
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  border-radius: 500px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 3px;
+  font-family: "muli semibold", sans-serif;
+}
+
+img {
+  width: 100%
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: space-between;
+}
+
+form > input {
+  margin: 1em 0;
+  border-radius: 500px;
+  padding: 0 15px;
+}
+
+form > label {
+  font-family: "muli semibold italic", sans-serif;
+  color: #fffffe;
+}
+
+form > button {
+  background-color: #eebbc3;
+  color: #232946;
+  border-radius: 500px;
+  width: 50%;
+  font-family: "muli semibold", sans-serif;
+}
