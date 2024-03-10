@@ -1,18 +1,9 @@
-# sinatra-template
+# Random Vacation Generator
 
-Use this repository to create new Sinatra apps. 
+This app takes a date and gives you a country to visit on that date. It also gives you information on that country from the CIA world factbook, a conversion from USD into that country's currency, and a forecast of the temperature and inches of precipitation on that day. 
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
+To run this app, you have two options.
 
-```ruby
-require "sinatra/activerecord"
-```
+1. Visit the deployed app on Render:
 
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+2. Clone the app, run the `bundle install` command, then `bin/server` to start a local server.
