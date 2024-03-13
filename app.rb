@@ -13,12 +13,10 @@ end
 
 post("/vacayresults") do
   @date = Date.new
-  @unparsed_date = Date.new
 
   #We check the params to make sure the user entered a date. If they didn't, we redirect them to the nil date error page.
   if params["date"] != ""
     @date = Date.parse(params["date"])
-    @unparsed_date = Time.new(params["date"]).to_i
   else
     redirect "/nil_date_error"
   end
@@ -48,6 +46,7 @@ post("/vacayresults") do
       end
     }
 
+    sleep(0.5)
     if lookup_code
     final_code = lookup_code.code
     
@@ -73,8 +72,7 @@ post("/vacayresults") do
     #Lastly, we get the currency conversion.
     country_currency_code = country.fetch("currencies").first[0]
   
-    conversion_api_url = "https://api.getgeoapi.com/v2/currency/convert
-    ?api_key=#{ENV["EXCHANGE_KEY"]}&from=USD&to=#{country_currency_code}&amount=1&format=json"
+    conversion_api_url = "https://api.getgeoapi.com/v2/currency/convert?api_key=#{ENV["EXCHANGE_KEY"]}&from=USD&to=#{country_currency_code}&amount=1&format=json"
     
   raw_conversion_data = HTTP.get(conversion_api_url)
   
